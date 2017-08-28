@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<button (click)='sort("id","ASC")'>idのASC</button>
+<button (click)='sort("id","DESC")'>idのDESC</button>
+<button (click)='sort("name","ASC")'>nameのASC</button>
+<button (click)='sort("name","DESC")'>nameのDESC</button>
+<button (click)='sort("rand","ASC")'>randのASC</button>
+<button (click)='sort("rand","DESC")'>randのDESC</button>
+<hr>
+<table border='1'>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>rand</th>
+  </tr>
+  <ng-container *ngFor="let i of tableData | orderBy:order">
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.rand}}</td>
+    </tr>
+  </ng-container>
+</table>
